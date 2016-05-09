@@ -21,8 +21,8 @@ body{
                 <input class="peso" type="text" id="peso" name="peso" />	
                 <label>Sexo:</label>
                 <select id="genero" name="genero">
-                    <option value="">Feminino</option>
-                    <option value="">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
                 </select><br>
                 <br><label>Altura (Em Metros):</label>
                 <input class="altura"type="text" id="altura" name="altura"/><br>		
@@ -37,9 +37,9 @@ body{
     <script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
     <script>
     jQuery(function($){
-     $('#peso').mask("999.99");
-     $('#altura').mask("9.99");
- });
+       $('#peso').mask("999.99");
+       $('#altura').mask("9.99");
+   });
     </script>
     <script src="js/bootstrap.min.js"></script>
     <script type"text/javascript">
@@ -48,12 +48,50 @@ body{
         var altura = document.getElementById(altura).value;
         var genero = document.getElementById(genero).value;
         var res = peso/(altura*altura);
+        
+        switch(genero){
 
-        if (genero=="Masculino"){
-            alert("IMC Homem: " + res);
-        }else{
-            alert("IMC Mulher: " + res);
+            case "Masculino":
+            if(res>40){
+                alert("IMC :" + res +" - Homem Obeso morbido");
+            }
+            if(res>=30 && res<40){
+                alert("IMC :" + res +" - Homem obeso moderado");
+            }
+            if(res>=25 && res<30){
+                alert("IMC :" + res +" - Homem  acima normal");
+            }
+            if(res>=20 && res<25){
+                alert("IMC :" + res +" - Homem normal");
+            }
+            if(res<20){
+                alert("IMC :" + res +" - Homem abaixo do normal");
+            }
+
+            break;
+
+            case "Feminino":
+            if(res>39){
+                alert("IMC :" + res +" - Mulher Obesa morbida");
+            }
+            if(res>=29 && res<39){
+                alert("IMC :" + res +" - Mulher obesa moderada");
+            }
+            if(res>=24 && res<29){
+                alert("IMC :" + res +" - Mulher acima normal");
+            }
+            if(res>=19 && res<24){
+                alert("IMC :" + res +" - Mulher normal");
+            }
+            if(res<19){
+                alert("IMC :" + res +" - Mulher abaixo do normal");
+            }
+
+
+
+            break;
         }
+
     }
     </script>
 </body>
