@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Cálculo de IMC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<style type="text/css">
+center {
+    background-color: #ffffff;
+    
+
+}
+ body{background-color: BABABA;}   
+
+</style>
+<form action="form.js" method="post" id="imc">
+    <div id="item" class="item">
+         <h2> <center>Cálculo de IMC</center></h1>
+        <center>O (IMC) Índice de Massa Corporal, apesar de ter alguns problemas, ainda é o método mais rápido para obter a informação se está abaixo do peso normal, acima do peso ideal ou obeso. </center>
+
+        <body>
+            <br><label><center>Peso:</label>
+            <input type="text"id="peso" value="00,00"name="peso"/>	
+            <label>Sexo:</label>
+        	<select id="genero" name="genero">
+                    <option value="">Feminino</option>
+                    <option value="">Masculino</option>
+                </select><br>
+		<br><label>Altura:</label>
+                <input type="text" id="alt"value="0,00" name="altura"/><br>		
+                <br><input type="button" id="calc" value="Calcular IMC"/></center></body>
+       
+    </div>
+
+</form>
